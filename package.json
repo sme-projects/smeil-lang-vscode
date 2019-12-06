@@ -4,6 +4,7 @@
     "description": "SMEIL Syntax Highlighter",
     "publisher": "kenkendk",
     "version": "1.0.0",
+    "repository": "https://github.com/sme-projects/smeil-lang-vscode",
     "engines": {
         "vscode": "^1.40.0"
     },
