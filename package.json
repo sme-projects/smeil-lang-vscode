@@ -1,0 +1,26 @@
+{
+    "name": "smeil-lang",
+    "displayName": "smeil-lang",
+    "description": "SMEIL Syntax Highlighter",
+    "publisher": "kenkendk",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "smeil",
+            "aliases": ["SME Implementation Language", "smeil"],
+            "extensions": [".sme"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "smeil",
+            "scopeName": "source.smeil",
+            "path": "./syntaxes/smeil.tmLanguage.json"
+        }]
+    }
+}

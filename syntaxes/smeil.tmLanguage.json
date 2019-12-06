@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SME Implementation Language",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#entities"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.smeil",
+				"match": "\\b(as|async|await|barrier|break|bus|case|const|connect|clocked|default|elif|else|enum|exposed|for|from|function|generate|if|import|in|instance|inverse|network|normal|of|out|proc|return|switch|sync|to|type|unique|var|wait|where)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+					"name": "comment.line.double-slash.smeil",
+					"begin": "//",
+					"end": "\n"
+
+				}
+			]
+		},
+		"entities": {
+			"patterns": [{
+				"name": "entity.name.type",
+				"match": "((i|u|f)[0-9]+)|int|uint|float|bool"
+			},
+			{
+				"name": "entity.name.method",
+				"match": "[a-z][a-z0-9-_]+(\\.[a-z][a-z0-9_-]*)*"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.smeil",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.smeil",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [{
+					"name": "constant.character",
+					"match": "(<|>|=|!|->)"
+				},
+				
+				{
+					"name": "constant.language",
+					"match": "false|true"
+				},
+
+				{
+					"name": "constant.numeric",
+					"match": "[0-9]"
+				}
+			]
+		}
+	},
+	"scopeName": "source.smeil"
+}
